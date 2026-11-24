@@ -1,0 +1,21 @@
+﻿submitted_at,desired_dish,meal_type,ingredients,ingredients_other,excluded_ingredients,dietary_preferences,dietary_other,preparation_time,difficulty,tastes_and_cuisines,tastes_other,spice_level
+2026-11-01T12:00:00+00:00,"Un plat chaud, crémeux et réconfortant pour un soir froid.",Dîner,"[""Pâtes"", ""Fromage"", ""Légumes""]",,poivron,[],,30 à 60 minutes,2,"[""Italien"", ""Doux""]",,1
+2026-11-01T12:05:00+00:00,"Quelque chose de frais et rapide, avec du riz et des légumes croquants.",Déjeuner,"[""Riz"", ""Légumes""]",,cacahuètes,"[""Végétarien""]",,15 à 30 minutes,1,"[""Asiatique"", ""Acidulé""]",,2
+2026-11-01T12:10:00+00:00,"Une recette végétarienne riche en protéines, pas trop épicée.",Dîner,"[""Légumineuses"", ""Légumes""]",,aubergine,"[""Végétarien""]",,30 à 60 minutes,2,"[""Méditerranéen"", ""Doux""]",,1
+2026-11-01T12:15:00+00:00,Un dessert au chocolat simple et fondant.,Dessert,"[""Œufs""]",,noisettes,[],,30 à 60 minutes,2,"[""Doux""]",,1
+2026-11-01T12:20:00+00:00,"Un plat léger au poisson et au citron, facile à préparer.",Dîner,"[""Poisson"", ""Légumes""]",,aneth,[],,15 à 30 minutes,1,"[""Acidulé"", ""Doux""]",,1
+2026-11-01T12:25:00+00:00,Une soupe nourrissante avec des légumes de saison.,Dîner,"[""Légumes"", ""Légumineuses""]",,céleri,"[""Végétalien""]",,30 à 60 minutes,1,"[""Doux""]",,1
+2026-11-01T12:30:00+00:00,"Un plat indien parfumé, végétarien, avec un peu de piquant.",Dîner,"[""Riz"", ""Légumineuses""]",,,"[""Végétarien""]",,30 à 60 minutes,2,"[""Indien"", ""Épicé""]",,4
+2026-11-01T12:35:00+00:00,"Une salade complète à emporter, avec du poulet et une sauce citronnée.",Déjeuner,"[""Poulet"", ""Légumes""]",,moutarde,[],,Moins de 15 minutes,1,"[""Acidulé"", ""Français""]",,1
+2026-11-01T12:40:00+00:00,Des pâtes avec une sauce tomate maison et des herbes.,Déjeuner,"[""Pâtes"", ""Légumes"", ""Fromage""]",,olives,[],,30 à 60 minutes,2,"[""Italien"", ""Doux""]",,1
+2026-11-01T12:45:00+00:00,"Un repas vegan rapide, épicé et inspiré de la cuisine asiatique.",Dîner,"[""Riz"", ""Légumes"", ""Légumineuses""]",,,"[""Végétalien""]",,15 à 30 minutes,1,"[""Asiatique"", ""Épicé""]",,4
+2026-11-01T12:50:00+00:00,"Un petit-déjeuner sucré, fruité et facile à préparer.",Petit-déjeuner,"[""Fruits""]",,banane,"[""Végétarien""]",,Moins de 15 minutes,1,"[""Doux""]",,1
+2026-11-01T12:55:00+00:00,Un gratin familial avec des légumes et du fromage.,Dîner,"[""Légumes"", ""Fromage""]",,courgette,"[""Sans gluten""]",,30 à 60 minutes,2,"[""Français"", ""Doux""]",,1
+2026-11-01T13:00:00+00:00,"Un plat de poulet épicé avec du riz, prêt en moins de trente minutes.",Dîner,"[""Poulet"", ""Riz""]",,,[],,15 à 30 minutes,2,"[""Épicé"", ""Sucré-salé""]",,4
+2026-11-01T13:05:00+00:00,Une tarte salée végétarienne à servir avec une salade.,Déjeuner,"[""Œufs"", ""Légumes"", ""Fromage""]",,poireau,"[""Végétarien""]",,Plus d’une heure,3,"[""Français"", ""Salé""]",,1
+2026-11-01T13:10:00+00:00,"Un plat méditerranéen avec des pois chiches, des tomates et des herbes.",Déjeuner,"[""Légumineuses"", ""Légumes""]",,,"[""Végétalien"",""Sans lactose""]",,30 à 60 minutes,2,"[""Méditerranéen"", ""Acidulé""]",,2
+2026-11-01T13:15:00+00:00,Quelque chose de très simple avec des œufs et des légumes.,Déjeuner,"[""Œufs"", ""Légumes""]",,champignons,"[""Sans gluten""]",,Moins de 15 minutes,1,"[""Doux"", ""Salé""]",,1
+2026-11-01T13:20:00+00:00,"Un curry doux de légumes au lait de coco, servi avec du riz.",Dîner,"[""Légumes"", ""Riz""]",,,"[""Végétalien"",""Sans lactose""]",,30 à 60 minutes,2,"[""Indien"", ""Doux""]",,2
+2026-11-01T13:25:00+00:00,"Un dessert frais aux fruits, pas trop sucré.",Dessert,"[""Fruits""]",,kiwi,"[""Végétalien"",""Sans gluten""]",,Moins de 15 minutes,1,"[""Doux"", ""Acidulé""]",,1
+2026-11-01T13:30:00+00:00,"Un plat mijoté traditionnel, généreux et pas piquant.",Dîner,"[""Viande"", ""Légumes""]",,porc,[],,Plus d’une heure,3,"[""Français"", ""Doux""]",,1
+2026-11-01T13:35:00+00:00,"Un sandwich chaud au fromage, avec une touche de tomate.",Collation,"[""Fromage"", ""Légumes""]",,,[],,15 à 30 minutes,1,"[""Salé"", ""Doux""]",,1
