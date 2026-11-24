@@ -244,15 +244,19 @@ class MoteurRecommandation:
         df_comp["statut"] = [statut_competence(s) for s in score]
         df_comp["meilleure_preuve"] = [preuves[i].texte if i >= 0 else "" for i in meilleure]
         df_comp["source_preuve"] = [preuves[i].source if i >= 0 else "" for i in meilleure]
+        df_comp["type_preuve"] = [preuves[i].type if i >= 0 else "" for i in meilleure]
         df_comp["cosinus_brut"] = [float(cosinus[i, j]) if i >= 0 else 0.0 for j, i in enumerate(meilleure)]
 
         # --- Étape 5a : score par bloc (profil, indépendant du métier) -----------------------
         df_blocs = (df_comp.groupby(["bloc_id", "bloc"], sort=False)
                     .agg(score=("score", "mean"), semantique=("semantique", "mean"),
+                         semantique_top3=("semantique", lambda s: s.nlargest(3).mean()),
                          auto_evaluation=("auto_evaluation", "mean"))
                     .reset_index())
-        # Écart entre ce que l'utilisateur déclare (Likert) et ce que ses textes décrivent
-        df_blocs["ecart_auto_vs_texte"] = df_blocs["auto_evaluation"] - df_blocs["semantique"]
+        # Écart entre ce que l'utilisateur déclare (Likert) et ce que ses textes démontrent.
+        # On compare au niveau de ses 3 meilleures compétences du bloc : un expert déclaré d'un bloc
+        # n'a pas à décrire les 9 compétences du bloc, mais il doit en démontrer au moins quelques-unes.
+        df_blocs["ecart_auto_vs_texte"] = df_blocs["auto_evaluation"] - df_blocs["semantique_top3"]
 
         # --- Étape 5b : couverture de chaque métier ------------------------------------------
         scores_par_id = dict(zip(df_comp["competence_id"], score))
@@ -319,21 +323,30 @@ class MoteurRecommandation:
 
         criteres = d.sort_values("contribution", ascending=False).head(3)
         lacunes = d[d["coeur"] & (d["score"] < config.SEUIL_PARTIEL)].sort_values("score").head(3)
-        par_bloc = self.couverture_par_bloc(ligne["metier_id"], df_comp).sort_values("S", ascending=False)
+        par_bloc = self.couverture_par_bloc(ligne["metier_id"], df_comp)
+        # Blocs qui portent le plus la couverture de ce métier : contribution W_i · S_i
+        par_bloc = par_bloc.assign(contribution=par_bloc["W"] * par_bloc["S"]).sort_values("contribution", ascending=False)
 
         # --- Texte de l'explication (règles transparentes, aucun modèle génératif) ------------
         phrases = []
         blocs_forts = par_bloc[par_bloc["S"] >= config.SEUIL_PARTIEL]["bloc"].head(2).tolist()
         if blocs_forts:
             phrases.append(f"Ce métier s'appuie sur vos acquis en {_liste_fr([b.lower() for b in blocs_forts])}.")
-        for _, c in criteres.iterrows():
-            if c["meilleure_preuve"] and c["semantique"] > 0:
-                phrases.append(
-                    f"Votre réponse « {_couper(c['meilleure_preuve'])} » ({c['source_preuve'].lower()}) "
-                    f"a été rapprochée de la compétence « {c['competence']} » "
-                    f"(similarité cosinus {c['cosinus_brut']:.2f})."
-                )
-                break  # une citation suffit dans le texte ; les autres sont dans les critères
+        # Citation : on privilégie une phrase rédigée par l'utilisateur (plus parlante qu'une case cochée)
+        # Seule une preuve au moins « partielle » est citée : une similarité à peine au-dessus du bruit
+        # ne justifie rien et rendrait l'explication peu crédible.
+        assez_forte = d["semantique"] >= config.SEUIL_PARTIEL
+        citables = d[assez_forte & (d["type_preuve"] == "texte")]
+        if citables.empty:
+            citables = d[assez_forte]
+        if not citables.empty:
+            c = citables.sort_values("contribution", ascending=False).iloc[0]
+            source = c["source_preuve"][:1].lower() + c["source_preuve"][1:]
+            phrases.append(
+                f"Votre réponse « {_couper(c['meilleure_preuve'])} » ({source}) "
+                f"a été rapprochée de la compétence « {c['competence']} » "
+                f"(similarité cosinus {c['cosinus_brut']:.2f})."
+            )
         if beta < 1 and ligne["affinite"] >= 0.5:
             phrases.append("Il correspond aussi au type de poste que vous décrivez dans votre objectif.")
         elif beta < 1 and ligne["affinite"] < 0.2:
@@ -351,7 +364,7 @@ class MoteurRecommandation:
             "criteres": criteres[["competence", "bloc", "score", "contribution", "meilleure_preuve",
                                   "source_preuve", "cosinus_brut"]].to_dict("records"),
             "lacunes": lacunes["competence"].tolist(),
-            "couverture_par_bloc": par_bloc.to_dict("records"),
+            "couverture_par_bloc": par_bloc.drop(columns="contribution").to_dict("records"),
             "explication": " ".join(phrases),
         }
 

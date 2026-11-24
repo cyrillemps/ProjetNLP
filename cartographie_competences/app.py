@@ -253,7 +253,8 @@ else:
     m1.metric("Métier recommandé", reco[0]["metier"])
     m2.metric("Score de correspondance", f"{reco[0]['score']:.0%}")
     m3.metric("Couverture des compétences", f"{reco[0]['couverture']:.0%}")
-    m4.metric("Niveau estimé", res.niveau)
+    m4.metric("Niveau estimé", res.niveau.replace("Profil ", "").capitalize(),
+              help="Couverture du métier recommandé : ≥ 70 % confirmé, ≥ 50 % intermédiaire, sinon en construction.")
 
     onglet_reco, onglet_profil, onglet_sem, onglet_methode = st.tabs(
         ["🏆 Recommandations", "👤 Votre profil", "🔎 Analyse sémantique", "📐 Méthode"])
@@ -280,13 +281,15 @@ else:
     with onglet_profil:
         st.subheader("Synthèse de votre profil")
         st.write(res.synthese)
-        col_g, col_d = st.columns([3, 2])
+        col_g, col_d = st.columns([1, 1])
         with col_g:
             st.plotly_chart(viz.radar_blocs(res.blocs, reco[0]["couverture_par_bloc"], reco[0]["metier"]),
                             width="stretch")
         with col_d:
-            tableau = res.blocs[["bloc", "score", "semantique", "auto_evaluation"]].rename(columns={
-                "bloc": "Bloc", "score": "Score", "semantique": "Analyse des textes", "auto_evaluation": "Auto-évaluation"})
+            tableau = res.blocs[["bloc_id", "score", "semantique", "auto_evaluation"]].copy()
+            tableau["bloc_id"] = tableau["bloc_id"].map(viz.NOMS_COURTS)
+            tableau = tableau.rename(columns={"bloc_id": "Bloc", "score": "Score", "semantique": "Analyse des textes",
+                                              "auto_evaluation": "Auto-évaluation"})
             st.dataframe(tableau, hide_index=True, width="stretch", column_config={
                 c: st.column_config.ProgressColumn(c, min_value=0, max_value=1, format="percent")
                 for c in ["Score", "Analyse des textes", "Auto-évaluation"]})

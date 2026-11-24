@@ -33,6 +33,7 @@ def test_decoupage_ignore_fragments_trop_courts():
     "Aucune expérience en cloud",
     "pas encore utilisé Docker",
     "je n'ai aucune notion de NLP",
+    "Je ne maîtrise ni Docker ni Kubernetes",        # cas trouvé lors de l'expérience du notebook 02
 ])
 def test_negations_detectees(phrase):
     assert est_negative(phrase)

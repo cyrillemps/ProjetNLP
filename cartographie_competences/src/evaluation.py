@@ -58,6 +58,31 @@ def tableau_comparatif(resultats: dict[str, dict]) -> pd.DataFrame:
     return df
 
 
+def bornes_calibration(encodeur, referentiel, personas: list[dict], sources=None) -> tuple[float, float]:
+    """Mesure COS_BAS et COS_HAUT pour un encodeur donné (même procédure que pour SBERT).
+
+    COS_BAS  = médiane de la meilleure similarité obtenue pour les compétences d'un bloc noté 1/5
+               (compétences absentes du profil : c'est le niveau de bruit à neutraliser) ;
+    COS_HAUT = 60e centile de la meilleure similarité obtenue pour les compétences cœur du bon métier.
+    Chaque méthode a sa propre échelle de cosinus : sans cette mesure, la comparaison serait injuste.
+    """
+    from .moteur import TOUTES_SOURCES, construire_preuves
+
+    emb_comp = encodeur.encoder(referentiel.competences["texte_embedding"].tolist())
+    absentes, presentes = [], []
+    for p in personas:
+        preuves, _, _ = construire_preuves(p["reponses"], referentiel, sources=sources or TOUTES_SOURCES)
+        if not preuves:
+            continue
+        cos = encodeur.encoder([x.texte for x in preuves]) @ emb_comp.T
+        poids = referentiel.poids_metier(p["metier_attendu"])
+        coeur = [i for i, c in enumerate(referentiel.ids_competences) if poids.get(c) == config.POIDS_COEUR]
+        absent = [i for i, b in enumerate(referentiel.competences["bloc_id"]) if p["reponses"]["likert"].get(b) == 1]
+        presentes += list(cos[:, coeur].max(axis=0))
+        absentes += list(cos[:, absent].max(axis=0))
+    return float(np.median(absentes)), float(np.percentile(presentes, 60))
+
+
 def separation(moteur, personas: list[dict]) -> np.ndarray:
     """Écart moyen de score entre le métier attendu et le meilleur des autres métiers.
 

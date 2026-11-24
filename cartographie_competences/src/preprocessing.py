@@ -74,7 +74,7 @@ def decouper_unites(texte: str) -> list[str]:
 # « ne ... que » (restriction) n'est volontairement pas inclus : « je n'utilise que Python »
 # est une affirmation.
 _NEGATION_NE = re.compile(
-    r"\bn(?:e\b|')\s*(?:\S+\s+){0,4}?(pas|jamais|plus|aucun|aucune|rien|guère|point)\b",
+    r"\bn(?:e\b|')\s*(?:\S+\s+){0,4}?(pas|jamais|plus|aucun|aucune|rien|guère|point|ni)\b",
     flags=re.IGNORECASE,
 )
 # Tournures négatives sans « ne » (fréquentes à l'oral ou à l'écrit rapide)

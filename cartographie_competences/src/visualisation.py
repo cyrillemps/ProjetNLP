@@ -46,24 +46,36 @@ def radar_blocs(blocs_profil: pd.DataFrame, par_bloc_metier: list[dict] | None =
     Si un métier est fourni, on superpose la couverture de SES compétences requises, bloc par bloc
     (les S_i de la formule de couverture) : on voit où le profil répond au métier et où il manque.
     """
-    noms = blocs_profil["bloc"].tolist()
+    # Libellés courts : les noms complets des blocs débordent du cadre du radar
+    noms = [NOMS_COURTS.get(b, n) for b, n in zip(blocs_profil["bloc_id"], blocs_profil["bloc"])]
     fermer = lambda v: list(v) + [v[0]]   # noqa: E731 - le radar doit revenir au point de départ
     fig = go.Figure()
     fig.add_trace(go.Scatterpolar(
-        r=fermer((blocs_profil["score"] * 100).round(0).tolist()), theta=fermer(noms), name="Votre profil (tous blocs)",
+        r=fermer((blocs_profil["score"] * 100).round(0).tolist()), theta=fermer(noms), name="Votre profil (toutes les compétences du bloc)",
         fill="toself", line=dict(color=SERIES[0], width=2), fillcolor="rgba(42,120,214,0.18)",
-        hovertemplate="%{theta}<br>Couverture : %{r:.0f} %<extra></extra>"))
+        customdata=fermer(blocs_profil["bloc"].tolist()),
+        hovertemplate="%{customdata}<br>Couverture : %{r:.0f} %<extra></extra>"))
     if par_bloc_metier:
-        s = {d["bloc"]: d["S"] * 100 for d in par_bloc_metier}
-        valeurs = [s.get(n, None) for n in noms]
+        # Points seulement sur les blocs que le métier requiert : un bloc absent du métier n'est pas « à 0 % »
+        s = {d["bloc_id"]: d["S"] * 100 for d in par_bloc_metier}
+        ids = [b for b in blocs_profil["bloc_id"] if b in s]
         fig.add_trace(go.Scatterpolar(
-            r=fermer([v if v is not None else 0 for v in valeurs]), theta=fermer(noms),
-            name=f"Compétences requises par « {nom_metier} »", line=dict(color=SERIES[1], width=2, dash="dot"),
+            r=[s[b] for b in ids], theta=[NOMS_COURTS.get(b, b) for b in ids], mode="markers",
+            name=f"Compétences requises par « {nom_metier} »",
+            marker=dict(color=SERIES[1], size=13, symbol="diamond", line=dict(color=SURFACE, width=2)),
             hovertemplate="%{theta}<br>Couverture des compétences du métier : %{r:.0f} %<extra></extra>"))
     fig.update_layout(polar=dict(bgcolor=SURFACE,
                                  radialaxis=dict(range=[0, 100], ticksuffix=" %", gridcolor=GRILLE, tickfont_size=10),
-                                 angularaxis=dict(gridcolor=GRILLE, tickfont_size=11)))
-    return _mise_en_page(fig, "Couverture par bloc de compétences", 460)
+                                 angularaxis=dict(gridcolor=GRILLE, tickfont_size=12)))
+    fig = _mise_en_page(fig, "Couverture par bloc de compétences", 500)
+    fig.update_layout(legend=dict(orientation="h", yanchor="top", y=-0.08, xanchor="center", x=0.5),
+                      margin=dict(l=60, r=60, t=60, b=60))
+    return fig
+
+
+NOMS_COURTS = {"B1": "Programmation", "B2": "Données et pipelines", "B3": "Analyse et statistiques",
+               "B4": "Visualisation et BI", "B5": "Machine learning", "B6": "Deep learning et NLP",
+               "B7": "Cloud et MLOps", "B8": "Gestion de projet"}
 
 
 def barres_metiers(metiers: pd.DataFrame, beta: float) -> go.Figure:
@@ -159,7 +171,7 @@ def barres_competences_metier(resultat, recommandation: dict, moteur) -> go.Figu
         customdata=np.c_[d["meilleure_preuve"].fillna(""), d["cosinus_brut"]],
         hovertemplate="%{y}<br>Score : %{x:.0f} %<br>Meilleure preuve : %{customdata[0]}"
                       "<br>Cosinus : %{customdata[1]:.2f}<extra></extra>"))
-    fig.update_xaxes(range=[0, 125], ticksuffix=" %")
+    fig.update_xaxes(range=[0, 125], ticksuffix=" %", tickvals=[0, 25, 50, 75, 100])
     fig.update_layout(bargap=0.3)
     return _mise_en_page(fig, f"Compétences requises : {recommandation['metier']}", 120 + 26 * len(d))
 
