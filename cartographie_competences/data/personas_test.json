@@ -1,0 +1,377 @@
+[
+  {
+    "id": "P01", "metier_attendu": "J01", "description": "Analyste marketing en alternance",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+4 / Master 1", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Après une licence d'économie, j'ai fait une alternance de deux ans dans le service marketing d'une enseigne de distribution. Je récupérais chaque semaine les exports du CRM, pleins de trous et de lignes en double, et je les remettais au propre avant toute étude.",
+        "projet": "J'ai étudié l'évolution des ventes par magasin sur trois ans pour comprendre la baisse de fréquentation. J'ai croisé les tickets de caisse avec la météo et les promotions, puis j'ai présenté les résultats au comité de direction avec quelques graphiques simples.",
+        "taches": "J'aime fouiller dans les chiffres pour trouver ce qui explique un phénomène. J'écris facilement des requêtes pour aller chercher les données dans l'entrepôt de l'entreprise."
+      },
+      "objectif": "Je veux continuer à aider les équipes métier à prendre de meilleures décisions grâce aux chiffres.",
+      "likert": {"B1": 2, "B2": 3, "B3": 4, "B4": 3, "B5": 1, "B6": 1, "B7": 1, "B8": 2},
+      "outils": ["Excel avancé", "SQL", "pandas / NumPy", "Power BI / Tableau"],
+      "guidees": {"G1": {"reponse": "Oui", "precision": ""}, "G4": {"reponse": "Oui", "precision": "J'ai fait un suivi hebdomadaire des ventes partagé avec les chefs de rayon."}, "G2": {"reponse": "Non"}, "G3": {"reponse": "Non"}, "G5": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P02", "metier_attendu": "J01", "description": "Stagiaire en statistique dans une mutuelle",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "Moins d'un an (stages, alternance)"},
+      "textes": {
+        "parcours": "Étudiant en master de statistique appliquée, j'ai fait un stage de six mois dans une mutuelle.",
+        "projet": "Pendant ce stage, j'ai analysé les causes de résiliation des adhérents. J'ai calculé des taux par tranche d'âge et par région, vérifié avec des tests si les écarts étaient significatifs et résumé tout ça dans un rapport avec des graphiques réalisés en Python.",
+        "taches": "Ce que je préfère, c'est explorer un jeu de données inconnu et repérer les valeurs aberrantes. J'aime aussi raconter ce que les chiffres montrent à des personnes qui ne sont pas du métier."
+      },
+      "objectif": "Travailler sur des études quantitatives qui ont un impact concret sur l'entreprise.",
+      "likert": {"B1": 3, "B2": 2, "B3": 5, "B4": 3, "B5": 2, "B6": 1, "B7": 1, "B8": 2},
+      "outils": ["Python", "R", "pandas / NumPy", "Matplotlib / Seaborn / Plotly"],
+      "guidees": {"G1": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P03", "metier_attendu": "J02", "description": "Ingénieur IA chez un assureur",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Ingénieur diplômé avec une spécialisation en intelligence artificielle, je travaille depuis deux ans dans l'équipe data d'un assureur.",
+        "projet": "J'ai construit un modèle qui estime la probabilité qu'un client parte à la concurrence. J'ai préparé les variables à partir de l'historique des contrats, comparé plusieurs algorithmes comme les forêts aléatoires et le gradient boosting, et choisi le meilleur avec une validation croisée sur l'AUC.",
+        "taches": "J'aime formuler un problème métier comme un problème de prédiction. Je suis à l'aise avec les probabilités et les tests d'hypothèses."
+      },
+      "objectif": "Concevoir des modèles prédictifs qui aident l'entreprise à anticiper le comportement de ses clients.",
+      "likert": {"B1": 4, "B2": 3, "B3": 4, "B4": 3, "B5": 5, "B6": 2, "B7": 2, "B8": 2},
+      "outils": ["Python", "pandas / NumPy", "scikit-learn", "SQL", "Git / GitHub"],
+      "guidees": {"G1": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Oui", "precision": "J'ai entraîné un modèle de churn et suivi son rappel sur les clients à risque."}, "G5": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P04", "metier_attendu": "J02", "description": "Docteur en biologie reconverti",
+    "reponses": {
+      "profil": {"niveau_etudes": "Doctorat", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Docteur en biologie, je me suis reconverti vers la science des données après une thèse où j'analysais beaucoup de mesures expérimentales.",
+        "projet": "J'ai prévu la demande d'électricité d'un réseau de bornes de recharge à partir de l'historique horaire, en tenant compte des jours fériés et de la saison. J'ai aussi regroupé les bornes en profils d'usage similaires pour adapter les tarifs.",
+        "taches": "J'aime la rigueur statistique : vérifier qu'un résultat n'est pas dû au hasard, mettre en place une expérience contrôlée et mesurer l'erreur de prévision."
+      },
+      "objectif": "Résoudre des problèmes concrets avec des modèles statistiques et de l'apprentissage automatique.",
+      "likert": {"B1": 3, "B2": 2, "B3": 5, "B4": 2, "B5": 4, "B6": 1, "B7": 1, "B8": 2},
+      "outils": ["Python", "R", "scikit-learn", "pandas / NumPy"],
+      "guidees": {"G2": {"reponse": "Oui", "precision": ""}, "G3": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P05", "metier_attendu": "J03", "description": "Développeur back-end passé en plateforme data",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "Plus de 3 ans"},
+      "textes": {
+        "parcours": "Développeur back-end pendant trois ans, je suis passé dans l'équipe plateforme de données d'une banque en ligne.",
+        "projet": "J'ai mis en place la chaîne qui récupère chaque nuit les transactions de plusieurs applications, les transforme et les charge dans le lac de données. Les traitements les plus lourds tournent sur un cluster Spark et l'enchaînement des tâches est planifié pour se relancer automatiquement en cas d'échec.",
+        "taches": "J'aime concevoir des schémas de tables propres et rendre les données fiables et disponibles pour les autres équipes."
+      },
+      "objectif": "Construire des infrastructures de données robustes qui passent à l'échelle.",
+      "likert": {"B1": 4, "B2": 5, "B3": 2, "B4": 1, "B5": 1, "B6": 1, "B7": 3, "B8": 2},
+      "outils": ["Python", "SQL", "Spark / Hadoop", "Airflow", "Docker", "PostgreSQL / MySQL", "Kafka"],
+      "guidees": {"G6": {"reponse": "Oui", "precision": "J'ai modélisé l'entrepôt des transactions et ses tables de référence."}, "G2": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P06", "metier_attendu": "J03", "description": "Alternant ingénieur en logistique",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+4 / Master 1", "experience": "Moins d'un an (stages, alternance)"},
+      "textes": {
+        "parcours": "Alternant en école d'ingénieurs dans une entreprise de logistique.",
+        "projet": "J'ai remplacé des fichiers Excel envoyés par mail par une base centralisée. J'ai écrit des scripts qui ramassent les fichiers des entrepôts, contrôlent les colonnes, rejettent les lignes incohérentes et alimentent les tables chaque heure. J'ai aussi branché un flux temps réel des scanners de colis.",
+        "taches": "Je préfère le travail en coulisses : automatiser l'arrivée des données, surveiller qu'elles sont complètes et documenter le modèle de données."
+      },
+      "objectif": "Devenir le référent technique sur l'architecture des données de mon entreprise.",
+      "likert": {"B1": 3, "B2": 4, "B3": 2, "B4": 2, "B5": 1, "B6": 1, "B7": 2, "B8": 2},
+      "outils": ["Python", "SQL", "Bash / ligne de commande", "PostgreSQL / MySQL", "Kafka", "Git / GitHub"],
+      "guidees": {"G6": {"reponse": "Oui", "precision": ""}, "G4": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P07", "metier_attendu": "J04", "description": "Ingénieur vision industrielle",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Ingénieur en informatique, j'ai travaillé deux ans dans une start-up de vision industrielle puis dans une équipe d'IA appliquée.",
+        "projet": "J'ai entraîné un réseau convolutif qui repère les défauts sur des pièces métalliques à partir de photos. Je l'ai ensuite optimisé pour qu'il réponde en moins de 50 millisecondes et je l'ai exposé via un service web utilisé sur la chaîne de production.",
+        "taches": "J'aime faire passer un modèle du notebook à un vrai produit : écrire du code propre et testé, mesurer ses performances et le rendre rapide."
+      },
+      "objectif": "Industrialiser des modèles d'apprentissage profond utilisés par de vrais utilisateurs.",
+      "likert": {"B1": 5, "B2": 2, "B3": 3, "B4": 1, "B5": 4, "B6": 4, "B7": 3, "B8": 2},
+      "outils": ["Python", "PyTorch / TensorFlow / Keras", "OpenCV", "scikit-learn", "Docker", "Git / GitHub", "Flask / FastAPI / Django"],
+      "guidees": {"G2": {"reponse": "Oui", "precision": ""}, "G5": {"reponse": "Oui", "precision": "Le modèle de détection de défauts tourne en production depuis un an."}, "G8": {"reponse": "Oui", "precision": ""}}
+    }
+  },
+  {
+    "id": "P08", "metier_attendu": "J04", "description": "Ingénieur recommandation (streaming)",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Après un master en apprentissage automatique, je travaille sur le moteur de recommandation d'une plateforme de streaming.",
+        "projet": "J'ai amélioré les suggestions de contenus en combinant le filtrage collaboratif et un réseau de neurones. J'ai réglé les hyperparamètres avec une recherche bayésienne et mesuré le gain avec des métriques hors ligne.",
+        "taches": "J'aime comprendre les mathématiques derrière les algorithmes et optimiser le code pour qu'il tienne la charge."
+      },
+      "objectif": "Concevoir des systèmes d'apprentissage automatique performants à grande échelle.",
+      "likert": {"B1": 4, "B2": 3, "B3": 3, "B4": 1, "B5": 5, "B6": 3, "B7": 2, "B8": 1},
+      "outils": ["Python", "PyTorch / TensorFlow / Keras", "scikit-learn", "Spark / Hadoop", "Git / GitHub"],
+      "guidees": {"G2": {"reponse": "Oui", "precision": ""}, "G5": {"reponse": "Oui", "precision": ""}, "G3": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P09", "metier_attendu": "J05", "description": "Linguiste spécialisée en TAL",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "Moins d'un an (stages, alternance)"},
+      "textes": {
+        "parcours": "Linguiste de formation, j'ai complété mon parcours par un master en traitement automatique des langues.",
+        "projet": "J'ai développé un outil qui lit les avis clients et détermine s'ils sont positifs ou négatifs et de quel sujet ils parlent. J'ai d'abord découpé et normalisé les textes, puis j'ai affiné un modèle CamemBERT sur quelques milliers d'avis annotés.",
+        "taches": "J'aime tout ce qui touche au sens des mots : comparer des représentations vectorielles, repérer les noms de produits et de personnes dans un texte."
+      },
+      "objectif": "Travailler sur des modèles qui comprennent le langage humain.",
+      "likert": {"B1": 3, "B2": 2, "B3": 3, "B4": 1, "B5": 3, "B6": 5, "B7": 1, "B8": 2},
+      "outils": ["Python", "Hugging Face Transformers", "spaCy / NLTK", "Gensim (Word2Vec)", "PyTorch / TensorFlow / Keras"],
+      "guidees": {"G3": {"reponse": "Oui", "precision": "J'ai entraîné des vecteurs Word2Vec sur un corpus juridique."}, "G2": {"reponse": "Oui", "precision": ""}}
+    }
+  },
+  {
+    "id": "P10", "metier_attendu": "J05", "description": "Développeur d'assistants conversationnels",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Développeur Python dans une ESN, je me suis spécialisé depuis un an dans les assistants conversationnels.",
+        "projet": "J'ai construit un assistant qui répond aux questions des salariés sur les procédures internes. Les documents sont découpés en passages, transformés en vecteurs et stockés dans une base vectorielle, puis un grand modèle de langage rédige la réponse à partir des passages retrouvés.",
+        "taches": "J'aime rédiger des consignes pour les modèles de langage et évaluer la qualité des réponses produites."
+      },
+      "objectif": "Concevoir des applications d'IA générative fiables pour les entreprises.",
+      "likert": {"B1": 4, "B2": 2, "B3": 2, "B4": 1, "B5": 2, "B6": 4, "B7": 2, "B8": 2},
+      "outils": ["Python", "LangChain / LLM", "Hugging Face Transformers", "Flask / FastAPI / Django", "Docker"],
+      "guidees": {"G3": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P11", "metier_attendu": "J06", "description": "Ancien administrateur système en industrialisation IA",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "Plus de 3 ans"},
+      "textes": {
+        "parcours": "Ancien administrateur système, je me suis orienté vers l'industrialisation de l'IA dans un grand groupe.",
+        "projet": "J'ai mis en place la plateforme qui réentraîne automatiquement les modèles de l'équipe data chaque semaine. Elle versionne les expériences, vérifie les performances avant de publier un modèle et alerte quand les données d'entrée s'écartent de celles de l'entraînement.",
+        "taches": "J'aime automatiser : construire des chaînes qui testent, empaquettent dans des conteneurs et déploient sans intervention manuelle."
+      },
+      "objectif": "Rendre la mise en production des modèles fiable et reproductible.",
+      "likert": {"B1": 4, "B2": 3, "B3": 1, "B4": 1, "B5": 2, "B6": 1, "B7": 5, "B8": 2},
+      "outils": ["Python", "Docker", "Kubernetes", "MLflow", "CI/CD (GitHub Actions, GitLab CI)", "AWS / Azure / GCP", "Git / GitHub"],
+      "guidees": {"G5": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Non"}, "G8": {"reponse": "Oui", "precision": ""}}
+    }
+  },
+  {
+    "id": "P12", "metier_attendu": "J06", "description": "Data scientist devenu MLOps",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Data scientist pendant deux ans, je me suis rendu compte que mes modèles restaient dans des notebooks.",
+        "projet": "J'ai donc transformé notre modèle de scoring en service : une API de prédiction conteneurisée et déployée sur le cloud. J'ai ajouté un tableau de suivi des temps de réponse et de la dérive des prédictions, et un pipeline qui relance l'entraînement quand c'est nécessaire.",
+        "taches": "Je fais le lien entre les data scientists et les équipes d'exploitation."
+      },
+      "objectif": "Me spécialiser dans le cycle de vie des modèles en production.",
+      "likert": {"B1": 4, "B2": 3, "B3": 3, "B4": 2, "B5": 4, "B6": 2, "B7": 4, "B8": 2},
+      "outils": ["Python", "scikit-learn", "Docker", "MLflow", "AWS / Azure / GCP", "CI/CD (GitHub Actions, GitLab CI)", "Flask / FastAPI / Django"],
+      "guidees": {"G5": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Oui", "precision": ""}}
+    }
+  },
+  {
+    "id": "P13", "metier_attendu": "J07", "description": "Consultant décisionnel junior",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Consultant décisionnel junior dans une ESN depuis dix-huit mois.",
+        "projet": "Pour un client du secteur de la santé, j'ai construit l'entrepôt décisionnel : tables de faits sur les séjours, dimensions patients, services et dates, alimentées chaque nuit depuis trois logiciels différents. J'ai ensuite réalisé des rapports Power BI pour les directeurs d'établissement.",
+        "taches": "J'aime modéliser les données pour qu'elles soient faciles à exploiter dans les outils de reporting, et former les utilisateurs à ces outils."
+      },
+      "objectif": "Concevoir des solutions décisionnelles complètes, de la source au rapport.",
+      "likert": {"B1": 3, "B2": 4, "B3": 2, "B4": 5, "B5": 1, "B6": 1, "B7": 1, "B8": 3},
+      "outils": ["SQL", "Power BI / Tableau", "PostgreSQL / MySQL", "dbt", "Excel avancé"],
+      "guidees": {"G4": {"reponse": "Oui", "precision": ""}, "G6": {"reponse": "Oui", "precision": ""}}
+    }
+  },
+  {
+    "id": "P14", "metier_attendu": "J07", "description": "Développeur décisionnel dans l'hôtellerie",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+2 / Bac+3", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Titulaire d'une licence professionnelle en informatique décisionnelle, j'ai travaillé dans le service informatique d'une chaîne hôtelière.",
+        "projet": "J'ai automatisé la production des rapports d'occupation. Les données des hôtels sont extraites, nettoyées et chargées dans un cube, puis les rapports sont générés et envoyés automatiquement chaque lundi à la direction.",
+        "taches": "J'aime optimiser des requêtes lentes et garantir que les chiffres affichés sont justes."
+      },
+      "objectif": "Continuer dans l'informatique décisionnelle et progresser techniquement.",
+      "likert": {"B1": 2, "B2": 4, "B3": 2, "B4": 4, "B5": 1, "B6": 1, "B7": 1, "B8": 2},
+      "outils": ["SQL", "Power BI / Tableau", "Excel avancé", "PostgreSQL / MySQL"],
+      "guidees": {"G4": {"reponse": "Oui", "precision": ""}, "G6": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P15", "metier_attendu": "J08", "description": "Contrôleur de gestion passé à la performance",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "Plus de 3 ans"},
+      "textes": {
+        "parcours": "Diplômé d'école de commerce, j'ai rejoint le contrôle de gestion d'un groupe industriel puis l'équipe performance.",
+        "projet": "J'ai défini avec la direction les indicateurs de suivi des usines, mis en place le tableau de bord mensuel et analysé l'impact de la nouvelle organisation sur la productivité.",
+        "taches": "J'aime transformer des chiffres en messages clairs pour les décideurs et animer les réunions de revue de performance."
+      },
+      "objectif": "Accompagner la direction dans ses choix stratégiques grâce aux données.",
+      "likert": {"B1": 1, "B2": 2, "B3": 3, "B4": 4, "B5": 1, "B6": 1, "B7": 1, "B8": 4},
+      "outils": ["Excel avancé", "Power BI / Tableau", "SQL"],
+      "guidees": {"G4": {"reponse": "Oui", "precision": ""}, "G7": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Non"}, "G5": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P16", "metier_attendu": "J08", "description": "Analyste commercial chez un opérateur",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+4 / Master 1", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Analyste au sein du service commercial d'un opérateur télécom.",
+        "projet": "Je suis chaque mois l'évolution du chiffre d'affaires par canal de vente, j'explique les écarts par rapport aux objectifs et je propose des actions correctives. J'ai aussi construit une prévision des ventes du trimestre suivant.",
+        "taches": "J'aime chercher les tendances dans les résultats commerciaux et les présenter de manière synthétique."
+      },
+      "objectif": "Devenir référent de la performance commerciale et du pilotage par les indicateurs.",
+      "likert": {"B1": 2, "B2": 2, "B3": 3, "B4": 4, "B5": 1, "B6": 1, "B7": 1, "B8": 3},
+      "outils": ["Excel avancé", "Power BI / Tableau", "SQL"],
+      "guidees": {"G4": {"reponse": "Oui", "precision": ""}}
+    }
+  },
+  {
+    "id": "P17", "metier_attendu": "J09", "description": "Administrateur Linux devenu ingénieur infrastructure",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "Plus de 3 ans"},
+      "textes": {
+        "parcours": "Administrateur Linux pendant quatre ans, je suis désormais ingénieur infrastructure dans une entreprise de e-commerce.",
+        "projet": "J'ai migré nos serveurs physiques vers le cloud. L'infrastructure est décrite dans des fichiers de configuration versionnés, les applications tournent dans des conteneurs orchestrés et chaque modification du code déclenche automatiquement les tests et le déploiement.",
+        "taches": "J'aime fiabiliser la production : mettre en place des alertes, analyser les journaux quand un incident survient et réduire la facture d'hébergement."
+      },
+      "objectif": "Concevoir des plateformes cloud sécurisées et automatisées.",
+      "likert": {"B1": 3, "B2": 2, "B3": 1, "B4": 1, "B5": 1, "B6": 1, "B7": 5, "B8": 2},
+      "outils": ["Bash / ligne de commande", "Docker", "Kubernetes", "Terraform", "AWS / Azure / GCP", "CI/CD (GitHub Actions, GitLab CI)", "Git / GitHub"],
+      "guidees": {"G5": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P18", "metier_attendu": "J09", "description": "Technicien réseau en mastère cloud",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "Moins d'un an (stages, alternance)"},
+      "textes": {
+        "parcours": "Technicien réseau reconverti, je suis en dernière année d'un mastère cloud et sécurité.",
+        "projet": "En alternance, j'ai automatisé la création des environnements de test. Un script provisionne les machines virtuelles, installe les applications et configure les règles de pare-feu et les droits d'accès.",
+        "taches": "Je suis attentif à la sécurité et à la disponibilité des services, et j'aime surveiller les systèmes."
+      },
+      "objectif": "Travailler sur l'infrastructure et l'automatisation dans le cloud.",
+      "likert": {"B1": 2, "B2": 2, "B3": 1, "B4": 1, "B5": 1, "B6": 1, "B7": 4, "B8": 2},
+      "outils": ["Bash / ligne de commande", "Terraform", "AWS / Azure / GCP", "Docker", "Git / GitHub"],
+      "guidees": {"G5": {"reponse": "Oui", "precision": ""}, "G8": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P19", "metier_attendu": "J10", "description": "Développeur full-stack en agence web",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Développeur full-stack depuis trois ans dans une agence web.",
+        "projet": "J'ai réalisé une application de réservation pour un réseau de salles de sport : interface en React, serveur et API en Django, base PostgreSQL, avec des tests automatisés sur chaque fonctionnalité.",
+        "taches": "J'aime écrire du code lisible, le faire relire par mes collègues et corriger les bugs difficiles."
+      },
+      "objectif": "Concevoir des applications utilisées par beaucoup de monde.",
+      "likert": {"B1": 5, "B2": 3, "B3": 1, "B4": 1, "B5": 1, "B6": 1, "B7": 2, "B8": 3},
+      "outils": ["Python", "JavaScript / TypeScript", "Flask / FastAPI / Django", "PostgreSQL / MySQL", "Git / GitHub", "Docker"],
+      "guidees": {"G8": {"reponse": "Oui", "precision": ""}, "G7": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P20", "metier_attendu": "J10", "description": "Élève ingénieur option génie logiciel",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+4 / Master 1", "experience": "Moins d'un an (stages, alternance)"},
+      "textes": {
+        "parcours": "Étudiant en école d'ingénieurs, option génie logiciel, avec un stage dans un éditeur de logiciels de comptabilité.",
+        "projet": "Pendant mon stage, j'ai développé un module de rapprochement bancaire en Java : conception des classes, optimisation de l'algorithme de correspondance des écritures et rédaction de la documentation pour l'équipe.",
+        "taches": "J'aime résoudre des problèmes d'algorithmique et améliorer la performance du code."
+      },
+      "objectif": "Devenir un développeur expérimenté capable de concevoir des logiciels complexes.",
+      "likert": {"B1": 4, "B2": 2, "B3": 1, "B4": 1, "B5": 1, "B6": 1, "B7": 1, "B8": 2},
+      "outils": ["Java / C++", "Git / GitHub", "SQL"],
+      "guidees": {"G8": {"reponse": "Oui", "precision": ""}}
+    }
+  },
+  {
+    "id": "P21", "metier_attendu": "J11", "description": "Administrateur de bases de données (assurance)",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "Plus de 3 ans"},
+      "textes": {
+        "parcours": "Administrateur de bases de données depuis six ans dans une compagnie d'assurance.",
+        "projet": "J'ai refondu le modèle de données des contrats : nouveau schéma relationnel, index, partitionnement des grosses tables, plan de sauvegarde et de restauration, chiffrement des colonnes sensibles et contrôle des accès.",
+        "taches": "J'aime garantir que les données sont cohérentes, protégées et conformes à la réglementation."
+      },
+      "objectif": "Concevoir l'architecture des données de systèmes critiques.",
+      "likert": {"B1": 3, "B2": 5, "B3": 1, "B4": 1, "B5": 1, "B6": 1, "B7": 3, "B8": 2},
+      "outils": ["SQL", "PostgreSQL / MySQL", "MongoDB", "Bash / ligne de commande"],
+      "guidees": {"G6": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P22", "metier_attendu": "J11", "description": "Ingénieur systèmes de gestion de données (santé)",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Ingénieur en informatique, spécialisé dans les systèmes de gestion de données.",
+        "projet": "J'ai conçu le stockage d'une application de santé : choix entre base relationnelle et base orientée documents, modèle entité-association, règles de conservation des données personnelles et audit de conformité.",
+        "taches": "J'aime rédiger les spécifications techniques et documenter précisément les structures de données."
+      },
+      "objectif": "Être responsable de la conception et de la sécurité des bases de données.",
+      "likert": {"B1": 3, "B2": 5, "B3": 2, "B4": 1, "B5": 1, "B6": 1, "B7": 2, "B8": 3},
+      "outils": ["SQL", "PostgreSQL / MySQL", "MongoDB"],
+      "guidees": {"G6": {"reponse": "Oui", "precision": ""}}
+    }
+  },
+  {
+    "id": "P23", "metier_attendu": "J12", "description": "Chef de projet formé à Scrum",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "Plus de 3 ans"},
+      "textes": {
+        "parcours": "Chef de projet pendant trois ans dans une entreprise de services, j'ai suivi une formation Scrum.",
+        "projet": "Sur un projet d'application de détection de fraude, je recueillais les besoins des équipes métier et je les traduisais en récits utilisateurs. Je décidais avec les parties prenantes de ce qui serait développé à chaque itération et je présentais les démonstrations.",
+        "taches": "J'aime faire le lien entre les besoins des utilisateurs et l'équipe technique, et arbitrer les priorités."
+      },
+      "objectif": "Piloter des produits basés sur la donnée et l'IA.",
+      "likert": {"B1": 1, "B2": 1, "B3": 2, "B4": 2, "B5": 1, "B6": 1, "B7": 1, "B8": 5},
+      "outils": ["Jira / Trello", "Excel avancé"],
+      "guidees": {"G7": {"reponse": "Oui", "precision": ""}, "G2": {"reponse": "Non"}, "G5": {"reponse": "Non"}}
+    }
+  },
+  {
+    "id": "P24", "metier_attendu": "J12", "description": "Consultante en organisation auprès d'équipes data",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Consultante en organisation, je travaille depuis deux ans avec des équipes de data scientists.",
+        "projet": "J'ai mené le cadrage d'un outil de prévision des stocks : ateliers avec les utilisateurs, rédaction du cahier des charges, planning, suivi du budget et des risques, puis formation des équipes à l'outil.",
+        "taches": "J'aime animer des ateliers, coordonner des équipes aux profils variés et rendre accessibles des sujets techniques."
+      },
+      "objectif": "Gérer des produits numériques de bout en bout.",
+      "likert": {"B1": 1, "B2": 1, "B3": 2, "B4": 2, "B5": 1, "B6": 1, "B7": 1, "B8": 5},
+      "outils": ["Jira / Trello", "Excel avancé"],
+      "guidees": {"G7": {"reponse": "Oui", "precision": ""}}
+    }
+  },
+  {
+    "id": "P25", "metier_attendu": "J01", "description": "Cas de négation : analyste sans deep learning ni NLP",
+    "reponses": {
+      "profil": {"niveau_etudes": "Bac+5 (ingénieur, master)", "experience": "1 à 3 ans"},
+      "textes": {
+        "parcours": "Je travaille comme chargé d'études dans une collectivité. Je n'ai jamais fait de deep learning ni de traitement du langage naturel.",
+        "projet": "J'ai analysé la fréquentation des bibliothèques de la ville à partir des données de prêts, après avoir corrigé les erreurs de saisie, et j'ai présenté l'évolution par quartier sous forme de graphiques.",
+        "taches": "J'aime écrire des requêtes pour extraire les bonnes données, mais je n'ai aucune expérience en mise en production ou en cloud."
+      },
+      "objectif": "Mieux exploiter les données publiques pour éclairer les décisions des élus.",
+      "likert": {"B1": 2, "B2": 3, "B3": 4, "B4": 3, "B5": 1, "B6": 1, "B7": 1, "B8": 2},
+      "outils": ["SQL", "Excel avancé", "Power BI / Tableau"],
+      "guidees": {"G1": {"reponse": "Oui", "precision": ""}, "G3": {"reponse": "Non"}}
+    }
+  }
+]

@@ -1,0 +1,6 @@
+# Réponses des utilisateurs : données personnelles, non versionnées
+data/reponses/*
+!data/reponses/.gitkeep
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
