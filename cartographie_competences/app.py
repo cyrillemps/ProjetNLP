@@ -105,7 +105,18 @@ def charger_demo(persona: dict) -> None:
         s[f"outil_{o}"] = o in r.get("outils", [])
     s["objectif"] = r.get("objectif", "")
     s["interets"] = []
-    s.pop("resultat", None)
+    for cle in ("resultat", "empreinte", "id_reponse"):
+        s.pop(cle, None)
+    s["message"] = f"Profil {persona['id']} chargé : parcourez les étapes ou allez directement aux résultats."
+
+
+def reinitialiser() -> None:
+    """Vide tout le questionnaire (réponses et résultats) pour repartir d'une page blanche."""
+    s = st.session_state
+    for cle in cles_widgets() + ["resultat", "empreinte", "id_reponse"]:
+        s.pop(cle, None)       # sans valeur en session, chaque widget reprend sa valeur par défaut
+    s["etape"] = 0
+    s["message"] = "Questionnaire vidé : vous pouvez le remplir avec vos propres réponses."
 
 
 def nb_mots_libres() -> int:
@@ -128,6 +139,8 @@ with st.sidebar:
     st.divider()
     mots = nb_mots_libres()
     st.metric("Mots en texte libre", mots, help="Les réponses en texte libre sont la matière de l'analyse sémantique.")
+    st.button("🗑️ Vider le questionnaire", on_click=reinitialiser, width="stretch",
+              help="Efface toutes les réponses (y compris un profil de démonstration chargé) et revient à l'accueil.")
     st.caption(f"Modèle : `{config.MODELE_SBERT.split('/')[-1]}`  \nRéférentiel : {len(ref.competences)} compétences, "
                f"{len(ref.blocs)} blocs, {len(ref.metiers)} métiers (ROME 4.0)")
 
@@ -159,14 +172,18 @@ if etape == 0:
     c3.info("**3. Résultats** : scores par bloc, top 3 des métiers et justification de chaque recommandation.")
     st.markdown("Durée : environ 10 minutes. Plus vos réponses sont précises, plus l'analyse est fiable.")
 
+    if st.session_state.get("message"):
+        st.success(st.session_state.pop("message"))
+
     with st.expander("🎬 Mode démonstration : pré-remplir avec un profil fictif"):
         demos = charger_demos()
         noms_metiers = ref.metiers.set_index("metier_id")["metier"]
         choix = st.selectbox("Profil de démonstration", demos,
                              format_func=lambda p: f"{p['id']} · {p['description']} (attendu : {noms_metiers[p['metier_attendu']]})")
-        if st.button("Charger ce profil"):
-            charger_demo(choix)
-            st.success("Profil chargé : vous pouvez parcourir les étapes ou aller directement aux résultats.")
+        c1, c2 = st.columns(2)
+        c1.button("Charger ce profil", on_click=charger_demo, args=(choix,), type="primary", width="stretch")
+        c2.button("Vider le questionnaire", on_click=reinitialiser, width="stretch",
+                  help="Revenir à un questionnaire vierge pour tester avec vos propres réponses.")
     boutons_navigation("Commencer →")
 
 elif etape == 1:
